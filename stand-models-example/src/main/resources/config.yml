@@ -1,0 +1,15 @@
+# Machine Spawning
+ship_model:
+  spawn_command: 'summon falling_block ~ ~1.0 ~ {Block:stone,Time:1,Passengers:[{id:falling_block,Block:redstone_block,Time:1,Passengers:[{id:falling_block,Block:activator_rail,Time:1,Passengers:[{id:commandblock_minecart,Command:"gamerule commandBlockOutput false"},{id:commandblock_minecart,Command:"summon armor_stand ~0.02052699999999999 ~-2.63955 ~0.0 {Pose:{Head:[0f,0f,-135f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-1.520527 ~-3.74311 ~0.0 {Pose:{Head:[0f,0f,45f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-1.75 ~-3.19133 ~0.0 {Pose:{Head:[0f,0f,90f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~0.02052699999999999 ~-3.74311 ~0.0 {Pose:{Head:[0f,0f,-45f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~0.25 ~-3.19133 ~0.0 {Pose:{Head:[0f,0f,-90f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-1.520527 ~-2.63955 ~0.0 {Pose:{Head:[0f,0f,135f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_trapdoor}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-0.375 ~-3.19133 ~0.0 {Pose:{Head:[0f,0f,90f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:anvil}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-0.75 ~-3.44133 ~0.0 {DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:iron_block}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-1.125 ~-3.19133 ~0.0 {Pose:{Head:[0f,0f,-90f]},DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:anvil}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-0.75 ~-2.63918 ~0.1875 {Small:1,DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:glass}]}"},{id:commandblock_minecart,Command:"summon armor_stand ~-0.75 ~-2.63918 ~0.125 {Small:1,DisabledSlots:4096,Invisible:1,NoGravity:1,ArmorItems:[{},{},{},{Count:1,id:coal_block}]}"},{id:commandblock_minecart,Command:"setblock ~ ~ ~1.0 command_block 0 replace {Command:\"fill ~ ~-3 ~-1 ~ ~ ~ air\"}"},{id:commandblock_minecart,Command:"setblock ~ ~-1 ~1.0 redstone_block"},{id:commandblock_minecart,Command:"kill @e[type=commandblock_minecart,r=1]"}]}]}]}'
+  
+  # Location the ship faces when spawned using the command
+  # Possible Values: 'NORTH', 'EAST', 'SOUTH', 'WEST'
+  facing: NORTH
+
+  # How close a player must be until the machine spawns in the armour stands
+  # Distance is in blocks
+  render_distance: 45
+
+  # How close a player must be before the makes noise and animate.
+  # Distance is in blocks
+  animation_distance: 15

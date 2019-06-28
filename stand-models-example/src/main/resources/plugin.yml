@@ -1,0 +1,11 @@
+name: ShipPlugin
+version: 0.1
+description: "An example plugin for the resource StandModelsLib"
+author: Lew_
+api-version: 1.13
+
+main: uk.lewdev.shipmodel.ShipPlugin
+
+commands:
+    miner:
+        description: main miner command
