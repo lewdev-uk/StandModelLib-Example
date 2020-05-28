@@ -1,18 +1,16 @@
 package uk.lewdev.shipmodel;
 
-import java.util.HashSet;
 import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Sound;
-import org.bukkit.entity.Player;
 
-import uk.lewdev.standmodels.model.Model;
+import uk.lewdev.standmodels.model.AnimatedModel;
 import uk.lewdev.standmodels.parser.ModelBuildInstruction;
 import uk.lewdev.standmodels.parser.ModelSpawnCommandParser;
 import uk.lewdev.standmodels.utils.Axis;
 
-public class ShipModel extends Model {
+public class ShipModel extends AnimatedModel {
 	
 	//Load the spawn command out of the config
 	private static String spawnCmd = ShipPlugin.instance.getOurConfig().getSpawnCommand();
@@ -34,15 +32,14 @@ public class ShipModel extends Model {
 	// Now our model constructor, which requires way less arguments than the Model constructor! Much nicer to work with.
 	// Again: How you handle this data & data structure is completely up to you. This is just a quick and simple tutorial.
 	public ShipModel(Location center, Axis desired) {
-		super(ins, center, defaultFacing, desired, renderDistance, animDistance);
-		super.setAnimated(true);
+		super(ins, center, defaultFacing, desired, renderDistance, animDistance, false);
 	}
 	
 	@Override
 	// We override this method from the Model class.
 	// It is optional to Override, meaning if your model doesn't animate - you don't have to implement this method here!
-	public void animationTick(HashSet<Player> playersInAnimationDistance) {
-		playersInAnimationDistance.stream().forEach(player -> {
+	protected void doAnimationTick() {
+		this.getPlayersInAnimDistance().forEach(player -> {
 			player.playSound(this.getCenter(), Sound.BLOCK_BEACON_ACTIVATE, 0.02f, 0.01f);
 		});
 		
